@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dividelux Libraryt</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<div class="container">
+  <div class="header">
+    <div class="logo">Dividelux Public Library</div>
+    <button class="open-button" onclick="openForm()">Add Book</button>
+  </div>
+  <div class="sidebar">
+    <div>Sort By</div>
+    <button onclick="sort(0)">Title</button>
+    <button onclick="sort(1)">Author</button>
+    <button onclick="sort(2)">Year</button>
+  </div>
+  <div class="library"> </div>
+</div>
+
+<div id=bg-block>
+  <div class="form-popup" id="bookForm">
+    <form action="javascript:void(0);" id="form-container" novalidate>
+      <h1 class="form-header">Add book</h1>
+      <div>
+        <label for="title"><b>Title</b></label>
+        <input type="text" name="title" id="title" minlength=4 maxlength=32 required>
+        <div id="titleError" class="errorTxt"></div>
+      </div>
+      <div>
+        <label for="auth"><b>Author</b></label>
+        <input type="text" name="auth" id="auth" placeholder="Last, First Middle" minlength="1" maxlength="48" required>
+        <div id="authError" class="errorTxt"></div>
+      </div>
+      <div>
+        <label for="year"><b>Year Published:</b></label>
+        <input type="number" name="year" max="2024" id="year" placeholder="XXXX" required>
+        <div id="yearError" class="errorTxt"></div>
+      </div>
+      <div>
+        <label for="read"><b>Have you read this book?</b></label>
+        <select name=read id=read>
+          <option value="t">Yes</option>
+          <option value="f">No</option>
+        </select>
+      </div>
+      <div class=form-buttons>
+
+        <button type="reset" class="btn cancel">Clear</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+        <button type="submit" class="btn">Add</button>
+      </div>
+      <div id="submitError" class="errorTxt"></div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
